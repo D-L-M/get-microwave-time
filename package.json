@@ -1,0 +1,30 @@
+{
+  "name": "get-microwave-time",
+  "description": "Get the microwave time representation of an integer",
+  "version": "0.0.1",
+  "author": "David Maidment <david@dmaidment.co.uk>",
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/D-L-M/get-microwave-time"
+  },
+  "main": "./dist/getMicrowaveTime.js",
+  "types": "./dist/getMicrowaveTime.d.ts",
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^2.3.4",
+    "ts-node": "^3.0.6",
+    "mocha": "^3.4.2",
+    "chai": "^4.0.2",
+    "@types/chai": "^4.0.0",
+    "@types/mocha": "^2.2.41"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "npm run transpile && mocha -r ts-node/register test/**/*.ts",
+    "transpile": "tsc -p ./src --outDir dist/",
+    "publish-to-npm": "npm install && npm test && npm run transpile && npm publish"
+  }
+}
